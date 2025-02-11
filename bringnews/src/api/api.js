@@ -19,9 +19,7 @@ async function fetchFunction () {
         const resultData = await result.json();
         return resultData;
     } catch (error) {
-        console.log('error', error)
-        const errorMessage = 'ERROR';
-        return errorMessage;
+        console.log('error', error);
     }
 }
 
