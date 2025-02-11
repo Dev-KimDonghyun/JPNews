@@ -5,7 +5,7 @@ const newsLocal = 'jp';
 const newsNumber = '1';
 const newsLanguage = 'ja';
 
-const bringNewsUrl = `https://api.thenewsapi.com/v1/news/top?api_token=${API_Key}&locale=${newsLocal}&limit=${newsNumber}&language=${newsLanguage}`; //API URL 상세정보 (뉴스 언어) 추가
+const bringNewsUrl = `https://api.thenewsapi.com/v1/news/all?api_token=${API_Key}&locale=${newsLocal}&limit=${newsNumber}&language=${newsLanguage}`; //API URL 상세정보 (뉴스 언어) 추가
 
 const requestOptions = {
     method: 'GET'
@@ -13,9 +13,33 @@ const requestOptions = {
 
 // 하단은 JSON 호출
 
-fetch(bringNewsUrl, requestOptions)
-    .then(response => response.text())
-    .then(result => {
-        console.log(result);
-    })
-    .catch(error => console.log('error', error));
+async function fetchFunction () {
+    try {
+        const result = await fetch(bringNewsUrl, requestOptions)
+        const resultData = await result.json();
+        return resultData;
+    } catch (error) {
+        console.log('error', error)
+        const errorMessage = 'ERROR';
+        return errorMessage;
+    }
+}
+
+export let forExportTitle;
+export let forExportUrl;
+
+async function run () {
+    const resultData = await fetchFunction();
+
+    if (resultData.data[0] !== undefined) {
+        forExportTitle = resultData.data[0].title;
+        forExportUrl = resultData.data[0].url;
+    } else {
+        forExportTitle = '오류';
+        forExportUrl = '예기치 못한 오류가 발생하였습니다.';
+    }
+}
+
+run().then(() => {
+    console.log(forExportTitle, forExportUrl);
+});
