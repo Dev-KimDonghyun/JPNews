@@ -1,16 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+
+<h1>{{ titleData }}, {{ urlData }}</h1> <!-- 임시로 변수 지정함 -->
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import { run } from './api/api.js';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data () {
+    return {
+      titleData: '',
+      urlData: '',
+    };
+  },
+  methods: {
+    async bringFetchData () {
+      const { forExportTitle, forExportUrl } = await run();
+      this.titleData = forExportTitle;
+      this.urlData = forExportUrl;
+    }
+  },
+  mounted () {
+    this.bringFetchData();
   }
 }
+
 </script>
 
 <style>

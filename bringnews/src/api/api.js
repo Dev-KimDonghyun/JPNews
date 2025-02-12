@@ -26,7 +26,7 @@ async function fetchFunction () {
 export let forExportTitle;
 export let forExportUrl;
 
-async function run () {
+export async function run () {
     const resultData = await fetchFunction();
 
     if (resultData.data[0] !== undefined) {
@@ -37,7 +37,3 @@ async function run () {
         forExportUrl = '예기치 못한 오류가 발생하였습니다.';
     }
 }
-
-run().then(() => {
-    console.log(forExportTitle, forExportUrl);
-});
