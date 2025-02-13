@@ -1,4 +1,4 @@
-import { API_Key } from './keys.js';
+import { API_Key } from '../../../bringnews/src/api/keys.js';
 import fetch from 'node-fetch'; // CommonJS 충돌 해결 by ChatGPT
 
 const newsLocal = 'jp';
