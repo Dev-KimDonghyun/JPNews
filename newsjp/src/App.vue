@@ -6,7 +6,7 @@
   
 <script setup>
   
-  import { run } from '../../newsjp/src/api/api.js';
+  import { run } from './api/api.js';
   
   export default {
     name: 'App',
