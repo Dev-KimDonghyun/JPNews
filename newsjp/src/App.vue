@@ -1,34 +1,34 @@
 <template>
 
-  <h1>{{ titleData }}, {{ urlData }}</h1> <!-- 임시로 변수 지정함 -->
+<h1>{{ titleData }}, {{ urlData }}</h1> <!-- 임시로 변수 지정함 -->
   
 </template>
-  
+
+
 <script setup>
-  
-  import { run } from './api/api.js';
-  
-  export default {
-    name: 'App',
-    data () {
-      return {
-        titleData: '',
-        urlData: '',
-      };
-    },
-    methods: {
-      async bringFetchData () {
-        const { forExportTitle, forExportUrl } = await run();
-        this.titleData = forExportTitle;
-        this.urlData = forExportUrl;
-      }
-    },
-    mounted () {
-      this.bringFetchData();
-    }
-  }
-  
-  </script>
+
+import { ref } from 'vue';
+import { onMounted } from 'vue';
+import { run } from './api/api.js';
+import { forExportTitle } from './api/api.js';
+import { forExportUrl } from './api/api.js';
+
+const titleData = ref(null); // 반응형 상태 변수 생성 - Vue3 Composition API
+const urlData = ref(null); // 반응형 상태 변수 생성 - Vue3 Composition API
+
+async function bringFetchData () {
+  await run();
+  titleData.value = forExportTitle; // ref()는 값을 value에 저장
+  urlData.value = forExportUrl; // ref()는 값을 value에 저장
+}
+
+onMounted(() => {
+  bringFetchData();
+});
+
+</script>
+
+
 <style scoped>
 .logo {
   height: 6em;

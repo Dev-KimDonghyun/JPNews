@@ -1,5 +1,4 @@
 import { API_Key } from './keys.js';
-import fetch from 'node-fetch'; // CommonJS 충돌 해결 by ChatGPT
 
 const newsLocal = 'jp';
 const newsNumber = '1';
@@ -36,4 +35,5 @@ export async function run () {
         forExportTitle = '오류';
         forExportUrl = '예기치 못한 오류가 발생하였습니다.';
     }
+    console.log(forExportTitle, forExportUrl);
 }
