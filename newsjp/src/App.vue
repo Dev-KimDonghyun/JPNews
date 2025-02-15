@@ -1,6 +1,13 @@
 <template>
 
-<h1>{{ titleData }}, {{ urlData }}</h1> <!-- 임시로 변수 지정함 -->
+<h1>今の日本は？</h1>
+<h2>今、日本で注目されてるニュース記事は、これです！</h2>
+
+<p class="news-title-data">{{ titleData }}</p>
+<p class="news-url-data">もっと詳しく見たいなら、ここ！ <a :href="urlData">{{ urlData }}</a></p>
+
+<p class="web-information">The News APIを利用して、いま日本で注目されているニュースを表出するサービスです</p>
+<p class="dev">Developed By Kim Donghyun, Contact: hyungus723@gmail.com</p>
   
 </template>
 
@@ -30,16 +37,38 @@ onMounted(() => {
 
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+
+body {
+  height: auto;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+h1 {
+  margin-top: 0px;
+  font-size: 75px;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+h2 {
+  margin-top: -30px;
+  font-size: 20px;
 }
+
+.news-title-data {
+  margin-top: 150px;
+  font-size: 30px;
+}
+
+.news-url-data {
+  margin-top: -20px;
+  font-size: 20px;
+}
+
+.web-information {
+  margin-top: 150px;
+  font-size: 20px;
+}
+
+.dev {
+  margin-top: -10px;
+}
+
 </style>
