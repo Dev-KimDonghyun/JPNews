@@ -4,7 +4,7 @@ const newsLocal = 'jp';
 const newsNumber = '1';
 const newsLanguage = 'ja';
 
-const bringNewsUrl = `https://api.thenewsapi.com/v1/news/all?api_token=${API_Key}&locale=${newsLocal}&limit=${newsNumber}&language=${newsLanguage}`; //API URL 상세정보 (뉴스 언어) 추가
+const bringNewsUrl = `https://api.thenewsapi.com/v1/news/top?api_token=${API_Key}&locale=${newsLocal}&limit=${newsNumber}&language=${newsLanguage}`; //API URL 상세정보 (뉴스 언어) 추가
 
 const requestOptions = {
     method: 'GET'
@@ -35,5 +35,4 @@ export async function run () {
         forExportTitle = '오류';
         forExportUrl = '예기치 못한 오류가 발생하였습니다.';
     }
-    console.log(forExportTitle, forExportUrl);
 }
