@@ -43,32 +43,79 @@ body {
 }
 
 h1 {
-  margin-top: 0px;
-  font-size: 75px;
+  margin-top: 0px; font-size: 75px;
 }
 
 h2 {
-  margin-top: -30px;
-  font-size: 20px;
+  margin-top: -30px; font-size: 20px;
 }
 
 .news-title-data {
-  margin-top: 150px;
-  font-size: 30px;
+  margin-top: 150px; font-size: 30px;
 }
 
 .news-url-data {
-  margin-top: -20px;
-  font-size: 20px;
+  margin-top: -20px; font-size: 20px;
 }
 
 .web-information {
-  margin-top: 150px;
-  font-size: 20px;
+  margin-top: 150px; font-size: 20px;
 }
 
 .dev {
   margin-top: -10px;
+}
+
+@media (max-width: 1440px) {
+  h1 {
+  margin-top: 0px; font-size: 55px;
+  }
+
+  h2 {
+  margin-top: -30px; font-size: 15px;
+  }
+
+  .news-title-data {
+  margin-top: 150px; font-size: 20px;
+  }
+
+  .news-url-data {
+  margin-top: -20px; font-size: 15px;
+  }
+
+  .web-information {
+  margin-top: 150px; font-size: 15px;
+  }
+
+  .dev {
+  margin-top: -10px; font-size: 15px;
+  }
+}
+
+@media (max-width: 720px) {
+  h1 {
+  margin-top: 0px; font-size: 40px;
+  }
+
+  h2 {
+  margin-top: -20px; font-size: 15px;
+  }
+
+  .news-title-data {
+  margin-top: 100px; font-size: 15px;
+  }
+
+  .news-url-data {
+  margin-top: -10px; font-size: 15px;
+  }
+
+  .web-information {
+  margin-top: 100px; font-size: 10px;
+  }
+
+  .dev {
+  margin-top: -10px; font-size: 10px;
+  }
 }
 
 </style>
