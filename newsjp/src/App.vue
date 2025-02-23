@@ -1,14 +1,22 @@
 <template>
 
-<h1>今の日本は？</h1>
-<h2>今、日本で注目されてるニュース記事は、これです！</h2>
+  <div>
 
-<p class="news-title-data">{{ titleData }}</p>
-<p class="news-url-data">もっと詳しく見たいなら、ここ！ <a :href="urlData">{{ urlData }}</a></p>
+    <h1>今の日本は？</h1>
+    <h2>今、日本で注目されてるニュース記事は、これです！</h2>
 
-<p class="web-information">The News APIを利用して、いま日本で注目されているニュースを表出するサービスです</p>
-<p class="dev">Developed By Kim Donghyun, Contact: hyungus723@gmail.com</p>
-  
+    <div>
+      
+      <p class="news-title-data">{{ titleData }}</p>
+      <p class="news-url-data">もっと詳しく見たいなら、ここ！ <a :href="urlData">{{ urlData }}</a></p>
+
+      <p class="web-information">The News APIを利用して、いま日本で注目されているニュースを表出するサービスです</p>
+      <p class="dev">Developed By Kim Donghyun, Contact: hyungus723@gmail.com</p>
+      
+    </div>
+
+  </div>
+
 </template>
 
 
