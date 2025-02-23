@@ -1,10 +1,10 @@
-import { yourApiKey } from './keys.js';
+import { yourAPIKey } from './keys.js';
 
 const newsLocal = 'jp';
 const newsNumber = '1';
 const newsLanguage = 'ja';
 
-const bringNewsUrl = `https://api.thenewsapi.com/v1/news/top?api_token=${yourApiKey}&locale=${newsLocal}&limit=${newsNumber}&language=${newsLanguage}`; //API URL 상세정보 (뉴스 언어) 추가
+const bringNewsUrl = `https://api.thenewsapi.com/v1/news/top?api_token=${yourAPIKey}&locale=${newsLocal}&limit=${newsNumber}&language=${newsLanguage}`; //API URL 상세정보 (뉴스 언어) 추가
 
 const requestOptions = {
     method: 'GET'
