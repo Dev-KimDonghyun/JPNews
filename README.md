@@ -7,7 +7,7 @@ This Project shows popular news in Japan.
 - Show Japanese news with The News API
 
 ## How To Run
-1. Clone this project
+1. Clone this project: `git clone https://github.com/Dev-KimDonghyun/JPNews.git`
 2. Install dependencies: `npm install`
 3. Create a file named `api.js` in the `newsjp/src/api` directory
 4. Write the following code in `api.js`: `export const yourApiKey = 'your api key from The News API';`
